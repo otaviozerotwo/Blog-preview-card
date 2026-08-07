@@ -1,0 +1,128 @@
+@use 'reset';
+@use 'colors';
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: colors.$yellow;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.card {
+  width: 384px;
+  padding: 1.5rem;
+  background-color: colors.$white;
+  border: 1px solid colors.$gray-950;
+  border-radius: 20px;
+  box-shadow: 8px 8px 0px 0px colors.$black;
+
+  .card-header {
+    img {
+      height: 200px;
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem 0rem;
+
+    p {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .card-category {
+      align-self: flex-start;
+      padding: 0.25rem 0.75rem;
+      background-color: colors.$yellow;
+      font-size: 0.875rem;
+      font-weight: 800;
+      border-radius: 4px;
+    }
+
+    .card-description {
+      color: colors.$gray-500;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    img {
+      height: 32px;
+    }
+
+    p {
+      font-size: 0.875rem;
+      font-weight: 800;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 327px;
+
+    .card-content{
+      p,
+      .card-category {
+        font-size: 0.75rem;
+      }
+
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      .card-description {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+.attribution {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  a {
+    font-weight: bold;
+  }
+
+  .bullet {
+    height: 4px;
+    width: 4px;
+    background-color: colors.$gray-950;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+
+    .bullet {
+      display: none;
+    }
+  }
+}
