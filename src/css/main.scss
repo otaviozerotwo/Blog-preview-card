@@ -1,12 +1,12 @@
 @use 'reset';
-@use 'colors';
+@use 'variables';
 
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: colors.$yellow;
+  background-color: var(--color-yellow);
 }
 
 .container {
@@ -16,16 +16,16 @@ body {
 }
 
 .card {
-  width: 384px;
+  width: 24rem;
   padding: 1.5rem;
-  background-color: colors.$white;
-  border: 1px solid colors.$gray-950;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-950);
   border-radius: 20px;
-  box-shadow: 8px 8px 0px 0px colors.$black;
+  box-shadow: 8px 8px 0px 0px var(--color-black);
 
   .card-header {
     img {
-      height: 200px;
+      height: 12.5rem;
       width: 100%;
       border-radius: 10px;
       object-fit: cover;
@@ -46,24 +46,24 @@ body {
     h1 {
       font-size: 1.5rem;
       font-weight: 800;
+      cursor: pointer;
+    }
 
-      &:hover {
-        color: colors.$yellow;
-        cursor: pointer;
-      }
+    h1:hover {
+      color: var(--color-yellow);
     }
 
     .card-category {
-      align-self: flex-start;
+      width: fit-content;
       padding: 0.25rem 0.75rem;
-      background-color: colors.$yellow;
+      background-color: var(--color-yellow);
       font-size: 0.875rem;
       font-weight: 800;
       border-radius: 4px;
     }
 
     .card-description {
-      color: colors.$gray-500;
+      color: var(--color-gray-500);
       font-size: 1rem;
       font-weight: 500;
     }
@@ -75,7 +75,7 @@ body {
     gap: 0.75rem;
 
     img {
-      height: 32px;
+      height: 2rem;
     }
 
     p {
@@ -84,8 +84,8 @@ body {
     }
   }
 
-  @media (max-width: 375px) {
-    width: 327px;
+  @media (max-width: 23.4375rem) {
+    width: 20.4375rem;
 
     .card-content{
       p,
@@ -119,11 +119,11 @@ body {
   .bullet {
     height: 4px;
     width: 4px;
-    background-color: colors.$gray-950;
+    background-color: var(--color-gray-950);
     border-radius: 50%;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 23.5375rem) {
     flex-direction: column;
 
     .bullet {
